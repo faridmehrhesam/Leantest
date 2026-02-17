@@ -143,7 +143,7 @@ namespace LeanTest
         {
             private WebApplicationFactory<T> _factory;
             private TestServer _testServer;
-            private HttpClient _client;			
+            private HttpClient _client;
 
             public FactoryWrapper(Func<WebApplicationFactory<T>> factoryFactory)
             {
