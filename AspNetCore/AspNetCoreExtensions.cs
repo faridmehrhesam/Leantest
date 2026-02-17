@@ -130,7 +130,6 @@ namespace LeanTest
 
             public void Dispose()
             {
-                (_testServer?.Host?.Services as IDisposable)?.Dispose();
                 _testServer?.Dispose();
                 _testServer = null;
                 _client?.Dispose();
@@ -144,7 +143,7 @@ namespace LeanTest
         {
             private WebApplicationFactory<T> _factory;
             private TestServer _testServer;
-            private HttpClient _client;
+            private HttpClient _client;			
 
             public FactoryWrapper(Func<WebApplicationFactory<T>> factoryFactory)
             {
@@ -158,7 +157,6 @@ namespace LeanTest
 
             public void Dispose()
             {
-                (_factory?.Services as IDisposable)?.Dispose();
                 _factory?.Dispose();
                 _factory = null;
             }
